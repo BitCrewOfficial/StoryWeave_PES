@@ -23,7 +23,7 @@ def get_gemini_story_script_response(prompt):
 
 def get_gemini_prompts_for_image_response(prompt):
     model = genai.GenerativeModel("gemini-1.5-flash")
-    full_prompt = f"{prompt} :I need you to give appropriate number of prompts for images with a minimum 10 simple image generation prompts at least, they should be of the format, img_1= your first response: img_2= your second response: img_3= your third response in a long continuous string with a colon as a separator for each image prompt"
+    full_prompt = f"{prompt} :I need you to give appropriate number of prompts for images with a minimum 15 simple image generation prompts at least, they should be of the format, img_1= your first response: img_2= your second response: img_3= your third response in a long continuous string with a colon as a separator for each image prompt"
     response = model.generate_content(full_prompt)
     if not response:
         return False
