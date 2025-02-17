@@ -1,0 +1,220 @@
+/* General Styles */
+body {
+  background: radial-gradient(circle, #1a1a2e, #16213e);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+* {
+  font-family: "Lato", sans-serif;
+}
+
+/* Form Container */
+.form-container {
+  background: rgba(30, 30, 60, 0.9);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  text-align: center;
+  max-width: 450px;
+  width: 100%;
+  border: 2px solid rgba(0, 255, 255, 0.7);
+}
+
+/* Headings */
+h3,
+h4 {
+  color: #0ef;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Labels */
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  color: #fff;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 95%; /* Set width to 100% */
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  border: 2px solid #0ef;
+  box-shadow: 0 0 10px #0ef;
+}
+
+/* Buttons */
+button,
+input[type="submit"],
+#signup {
+  width: 100%; /* Set width to 100% for all buttons */
+  background: linear-gradient(135deg, #00feba, #4026ea);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+  margin-top: 15px;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background: linear-gradient(135deg, #4026ea, #00feba);
+  box-shadow: 0 0 10px #0ef;
+}
+
+#signup {
+  background: linear-gradient(135deg, #ff0099, #00feba); /* Neon Pink to Cyan */
+  box-shadow: 0 0 10px rgba(255, 0, 153, 0.5);
+}
+
+#signup:hover {
+  background: linear-gradient(135deg, #00feba, #ff0099); /* Reverse Gradient */
+  box-shadow: 0 0 15px rgba(255, 0, 153, 0.8);
+  transform: scale(1.05);
+}
+
+/* Radio Button Styling */
+/* Radio Button Container */
+#language {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+  flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+/* Hide Default Radio Button */
+#language input[type="radio"] {
+  display: none;
+}
+
+/* Custom Radio Button Label */
+#language label {
+  position: relative;
+  cursor: pointer;
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glowing Hover Effect */
+#language label:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  transform: scale(1.05);
+}
+
+/* Radio Button Selected Effect */
+#language input[type="radio"]:checked + label {
+  background: linear-gradient(135deg, #0ef, #00d4ff);
+  color: #000;
+  box-shadow: 0 0 15px #0ef, 0 0 30px rgba(0, 255, 255, 0.8);
+  border: 2px solid #0ef;
+  transform: scale(1.08);
+}
+
+/* Circular Custom Radio Indicator */
+#language label::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: inline-block;
+  margin-right: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+/* When Selected, Fill the Circle */
+#language input[type="radio"]:checked + label::before {
+  background: #705deb;
+  border-color: #3c4940;
+  box-shadow: 0 0 8px white;
+}
+
+/* Small Screen Adjustments */
+@media (max-width: 480px) {
+  #language {
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #language label {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+/* Remove default list styles */
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Flash Messages */
+script {
+  display: none;
+}
+
+/* Styling for text area */
+/* Ensure text area stays within the container */
+#prompt {
+  width: 100%;
+  padding: 14px 20px;
+  margin: 10px 0;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 16px;
+  height: 100px;
+  resize: vertical; /* Allows the user to resize vertically */
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Ensures padding/border are included in width/height */
+}

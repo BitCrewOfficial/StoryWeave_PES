@@ -1,0 +1,9 @@
+{% extends "layout.html"%} {%block content%}
+<ul>
+  {% for history in historys %}
+  <li>"{{history["UserPrompt"]}}" - {{history["DateTime"]}}</li>
+  {% endfor %}
+</ul>
+
+<form action="/prompt" method="POST">{{back.hidden_tag()}} {{back.back}}</form>
+{%endblock content%}

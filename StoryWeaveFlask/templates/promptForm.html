@@ -1,0 +1,10 @@
+{% extends "layout.html"%} {%block content%}
+<form action="/processing" method="POST">
+  {{promptForm.hidden_tag()}} {{promptForm.prompt.label}} {{promptForm.prompt}}
+  <br />
+  {{promptForm.language.label}} {{promptForm.language}} {{promptForm.submit}}
+</form>
+<form action="/viewHistory" method="POST">
+  {{historyButton.hidden_tag()}} {{historyButton.history}}
+</form>
+{%endblock content%}
